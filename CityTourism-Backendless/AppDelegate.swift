@@ -11,11 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let APP_ID = "02DF3A5E-57C5-8A1B-FF63-CD1AA5348700"
+    let API_KEY = "1EF0AB7B-3BCE-5E52-FF8B-F44645372700"
+    
+    var backendless = Backendless.sharedInstance()
+    
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        backendless!.initApp(APP_ID, apiKey:API_KEY)
         return true
     }
 
